@@ -19,11 +19,11 @@ public class User {
     @Column()
     private Long userId;
 
-    @Column
+    @Column(unique = true)
     private String name;
     @Column(unique = true)
     private String email;
-    @Column() @Temporal(value = TemporalType.TIMESTAMP)
+    @Column @Temporal(value = TemporalType.TIMESTAMP)
     private Date blackholedAt = null;
     @Column
     @Enumerated(value = EnumType.STRING)
